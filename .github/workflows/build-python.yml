@@ -1,0 +1,17 @@
+name: Yaml Python
+on: push
+
+jobs:
+  build-python:
+    runs-on: ubuntu-latest
+    container: python:3.11
+
+    steps:
+      - name: Verificar entorno Python
+        run: |
+          echo "Ejecutando contenedor de Python"
+          python --version
+          pip --version
+
+      - name: Ejecutar script de prueba
+        run: python -c "print('¡Hola desde mi segundo contenedor en GitHub Actions!')"
